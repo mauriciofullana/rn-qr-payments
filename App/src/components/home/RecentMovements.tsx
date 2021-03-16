@@ -69,7 +69,16 @@ const RecentMovements: FunctionComponent<IRecentMovementsProps> = ({
 						</Text>
 					</View>
 					<View style={styles.listItemAmountContainer}>
-						<Text style={styles.listItemAmount}>USD {movement.amount}</Text>
+						<Text
+							style={[
+								styles.listItemAmount,
+								movement.isDebit
+									? { color: Colors.red }
+									: { color: Colors.green },
+							]}
+						>
+							USD {movement.amount}
+						</Text>
 					</View>
 					<FontAwesome
 						style={styles.listItemIcon}
@@ -146,7 +155,7 @@ const RecentMovements: FunctionComponent<IRecentMovementsProps> = ({
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: Colors.lightWarmGray,
+		backgroundColor: Colors.sectionBackground,
 		flex: 1,
 		borderTopStartRadius: containerRaduis,
 		borderTopEndRadius: containerRaduis,
@@ -160,7 +169,7 @@ const styles = StyleSheet.create({
 	},
 	headerContainer: {
 		height: 90,
-		borderBottomColor: Colors.screenBackground,
+		borderBottomColor: Colors.lightGray,
 		borderBottomWidth: 1,
 		padding: 20,
 	},
@@ -170,7 +179,7 @@ const styles = StyleSheet.create({
 	},
 	headerMainText: {
 		flex: 1,
-		color: Colors.lightGray,
+		color: Colors.baseText,
 		...containerHeaderText,
 	},
 	headerSeeAllText: {
@@ -194,13 +203,13 @@ const styles = StyleSheet.create({
 		borderColor: Colors.main,
 	},
 	headerButtonText: {
-		color: Colors.mediumGray,
+		color: Colors.baseText,
 	},
 	headerButtonTextActive: {
 		color: Colors.main,
 	},
 	listItemSeparetor: {
-		borderColor: Colors.lightGray,
+		borderColor: Colors.mediumGray,
 		borderWidth: 0.5,
 		opacity: 0.3,
 	},
@@ -214,12 +223,13 @@ const styles = StyleSheet.create({
 		alignItems: 'flex-start',
 	},
 	listItemHolderText: {
-		color: Colors.lightGray,
+		color: Colors.baseText,
 		fontWeight: 'bold',
 		fontSize: smallFontSize,
+		marginBottom: 5,
 	},
 	listItemReferenceText: {
-		color: Colors.lightGray,
+		color: Colors.baseText,
 		fontSize: 12,
 	},
 	listItemAmountContainer: {

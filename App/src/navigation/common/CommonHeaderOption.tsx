@@ -42,9 +42,12 @@ export const ScreenHeaderCommonOptions = ({
 				return (
 					<TouchableOpacity
 						style={styles.headerIconContainer}
-						onPress={() => navigation.openDrawer()}
+						onPress={() => navigation.navigate('UserProfile')}
 					>
-						<FontAwesome5 style={styles.hederMenuIcon} name="bell" size={24} />
+						<Image
+							style={styles.img}
+							source={require('../../../assets/pic.jpeg')}
+						/>
 					</TouchableOpacity>
 				);
 			} else {
@@ -70,19 +73,20 @@ export const StackCommonOptions = (): StackNavigationOptions => {
 
 const styles = StyleSheet.create({
 	hederMenuIcon: {
-		color: Colors.lightGray,
+		color: Colors.darkGray,
 	},
 	headerIconContainer: {
 		marginHorizontal: 15,
 	},
 	logoContainer: {
 		flex: 1,
-		// justifyContent: 'center',
-		// alignItems: 'center',
 	},
 	img: {
-		width: '80%',
-		height: undefined,
-		aspectRatio: 598 / 176,
+		width: 38,
+		height: 38,
+		borderRadius: 19,
+		borderColor: Colors.mediumGray,
+		borderWidth: 1,
+		marginRight: 10,
 	},
 });

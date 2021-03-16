@@ -6,10 +6,10 @@ import * as Animatable from 'react-native-animatable';
 import { Colors } from '../../styles';
 import { HomeScreenNavigationProp } from '../../navigation/home/types';
 import RecentMovements from '../../components/home/RecentMovements';
-import { baseFontSize } from '../../styles/typography';
+import { baseFontSize, smallestFontSize } from '../../styles/typography';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { lightWarmGray } from '../../styles/colors';
+import { sectionBackground } from '../../styles/colors';
 import { Welcome } from '../../components';
 import {
 	IMovement,
@@ -60,12 +60,10 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = ({ navigation }) => {
 						<MaterialCommunityIcons
 							style={styles.icon}
 							name="qrcode"
-							color={Colors.white}
-							size={38}
+							color={Colors.mainOpacity}
+							size={58}
 						/>
-					</View>
-					<View>
-						<Text style={styles.sectionText}>Cobrar</Text>
+						<Text style={styles.sectionText}>COBRAR</Text>
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.section}>
@@ -73,12 +71,10 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = ({ navigation }) => {
 						<MaterialCommunityIcons
 							style={styles.icon}
 							name="bank-transfer-out"
-							color={Colors.white}
-							size={38}
+							color={Colors.mainOpacity}
+							size={58}
 						/>
-					</View>
-					<View>
-						<Text style={styles.sectionText}>Pagar</Text>
+						<Text style={styles.sectionText}>PAGAR</Text>
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -102,51 +98,42 @@ const styles = StyleSheet.create({
 	},
 	actionsContainer: {
 		flexDirection: 'row',
-		paddingHorizontal: 20,
-	},
-	accountsLinkContainer: {
-		flexDirection: 'row',
-		alignSelf: 'center',
-	},
-	accountsLinkText: {
-		color: Colors.mediumGray,
-		fontSize: baseFontSize,
-		marginRight: 10,
-	},
-	productsCarouselContainer: {
-		marginTop: 10,
-	},
-	recentTrasnsactionsContainer: {
-		flex: 1,
-		marginTop: 40,
-
-		shadowColor: Colors.black,
-		shadowOffset: { width: 0, height: 0 },
-		shadowOpacity: 0.25,
-		elevation: 3,
-		shadowRadius: 3,
+		justifyContent: 'space-evenly',
 	},
 	section: {
-		flex: 1,
 		alignItems: 'center',
 	},
 	iconContainer: {
 		marginBottom: 10,
-		backgroundColor: lightWarmGray,
+		backgroundColor: sectionBackground,
 		borderRadius: 10,
+		shadowColor: Colors.black,
+		shadowOffset: { width: 0, height: 5 },
+		shadowOpacity: 0.3,
+		elevation: 3,
+		shadowRadius: 8,
+		alignItems: 'center',
+		justifyContent: 'center',
+		height: 120,
+		width: 120,
+	},
+	icon: {
+		backgroundColor: 'transparent',
+		marginBottom: 10,
+	},
+	sectionText: {
+		color: Colors.main,
+		fontSize: smallestFontSize,
+		fontWeight: 'bold',
+	},
+	recentTrasnsactionsContainer: {
+		flex: 1,
+		marginTop: 40,
 		shadowColor: Colors.black,
 		shadowOffset: { width: 0, height: 0 },
 		shadowOpacity: 0.25,
 		elevation: 3,
-		shadowRadius: 3,
-	},
-	icon: {
-		padding: 24,
-		backgroundColor: 'transparent',
-	},
-	sectionText: {
-		color: Colors.white,
-		fontSize: 14,
+		shadowRadius: 8,
 	},
 });
 
