@@ -40,26 +40,10 @@ const DrawerWelcome: FunctionComponent = () => {
 
 	return (
 		<View style={styles.container}>
-			<View
-				style={styles.welcomePicContainer}
-				// onPress={takeImageHandler}
-			>
-				<Image
-					style={styles.img}
-					source={require('../../../assets/pic.jpeg')}
-				/>
-				<Text
-					style={styles.headerSecond}
-				>{`${user?.name} ${user?.lastName}`}</Text>
-				{/* <FontAwesome name="user-circle-o" color={Colors.lightGray} size={90} /> */}
-			</View>
-			{/* <View style={styles.headerContainer}></View> */}
-			<View>
-				<Text style={styles.lastAccess}>Último acceso: 20 May 14:48</Text>
-				<Text style={styles.lastPassChange}>
-					Último cambio de contraseña: 7 May 14:22
-				</Text>
-			</View>
+			<Text style={styles.lastAccess}>Último acceso: 20 May 14:48</Text>
+			<Text style={styles.lastPassChange}>
+				Último cambio de contraseña: 7 May 14:22
+			</Text>
 		</View>
 	);
 };
@@ -68,15 +52,9 @@ export default DrawerWelcome;
 
 const styles = StyleSheet.create({
 	container: {
+		paddingVertical: 20,
+		paddingHorizontal: 10,
 		justifyContent: 'center',
-		alignItems: 'center',
-	},
-	welcomePicContainer: {
-		width: '100%',
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginVertical: 20,
-		paddingHorizontal: 20,
 	},
 	img: {
 		width: 55,

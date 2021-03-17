@@ -38,7 +38,7 @@ export default function DrawerContent(
 			<DrawerItem
 				style={renderBorder ? styles.drawerItem : null}
 				label={label}
-				inactiveTintColor={Colors.lightGray}
+				inactiveTintColor={Colors.darkGray}
 				activeTintColor={Colors.main}
 				onPress={() => props.navigation.navigate(navigateTo)}
 				icon={icon}
@@ -48,51 +48,41 @@ export default function DrawerContent(
 
 	return (
 		<View style={styles.container}>
-			<TouchableOpacity
-				style={styles.welcomeContainer}
-				onPress={() => props.navigation.navigate('UserProfile')}
-			>
+			<View style={styles.welcomeContainer}>
 				<Welcome />
-			</TouchableOpacity>
+			</View>
 			<DrawerContentScrollView>
 				<View>
 					{renderDrawerItem('Inicio', 'Home', true, () => (
 						<MaterialCommunityIcons
 							name="home"
-							color={Colors.lightGray}
-							size={26}
-						/>
-					))}
-					{renderDrawerItem('Mis Cuentas', 'ProductsScreen', true, () => (
-						<MaterialCommunityIcons
-							name="bank"
-							color={Colors.lightGray}
+							color={Colors.darkGray}
 							size={26}
 						/>
 					))}
 					{renderDrawerItem('Pagar', 'Transfer', true, () => (
 						<MaterialCommunityIcons
 							name="bank-transfer-out"
-							color={Colors.lightGray}
+							color={Colors.darkGray}
 							size={26}
 						/>
 					))}
 					{renderDrawerItem('Cobrar', 'ChargeList', true, () => (
 						<MaterialCommunityIcons
 							name="qrcode"
-							color={Colors.lightGray}
+							color={Colors.darkGray}
 							size={26}
 						/>
 					))}
 					{renderDrawerItem('Historial', 'Movements', true, () => (
 						<MaterialCommunityIcons
 							name="format-list-bulleted"
-							color={Colors.lightGray}
+							color={Colors.darkGray}
 							size={26}
 						/>
 					))}
 					{renderDrawerItem('Ajustes', 'Settings', false, () => (
-						<MaterialIcons name="settings" color={Colors.lightGray} size={26} />
+						<MaterialIcons name="settings" color={Colors.darkGray} size={26} />
 					))}
 				</View>
 			</DrawerContentScrollView>
@@ -100,16 +90,16 @@ export default function DrawerContent(
 				style={{
 					marginBottom: 10,
 					marginLeft: 12,
-					borderTopColor: Colors.mediumGray,
+					borderTopColor: Colors.darkGray,
 					borderTopWidth: 0.5,
 				}}
 				labelStyle={{ fontWeight: 'bold' }}
 				label="Salir"
-				inactiveTintColor={Colors.mediumGray}
+				inactiveTintColor={Colors.darkGray}
 				activeTintColor={Colors.main}
 				onPress={() => handleLogOut()}
 				icon={() => (
-					<Ionicons name="ios-log-out" size={28} color={Colors.mediumGray} />
+					<Ionicons name="ios-log-out" size={28} color={Colors.darkGray} />
 				)}
 			/>
 		</View>
@@ -123,11 +113,10 @@ const styles = StyleSheet.create({
 	},
 	welcomeContainer: {
 		backgroundColor: Colors.darkestGray,
-		paddingTop: 40,
-		paddingBottom: 20,
+		paddingTop: 50,
 	},
 	drawerItem: {
-		borderBottomColor: Colors.mediumGray,
+		borderBottomColor: Colors.darkGray,
 		borderBottomWidth: 0.3,
 	},
 });
