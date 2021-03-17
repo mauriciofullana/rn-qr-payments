@@ -67,7 +67,7 @@ export const StackCommonOptions = (): StackNavigationOptions => {
 			borderBottomWidth: 0,
 			backgroundColor: Colors.screenBackground,
 		},
-		headerTintColor: Colors.lightGray,
+		headerTintColor: Colors.headerText,
 	};
 };
 

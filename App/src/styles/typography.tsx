@@ -3,7 +3,7 @@ import * as Colors from './colors';
 
 export const extraLargeFontSize = 40;
 export const largeFontSize = 18;
-export const largestFontSize = 20;
+export const largestFontSize = 22;
 export const buttonFontSize = 18;
 export const baseFontSize = 15;
 export const smallFontSize = 14;
