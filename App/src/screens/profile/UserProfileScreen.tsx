@@ -8,11 +8,10 @@ import {
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { useDispatch } from 'react-redux';
 
-import { pageHorizontalPadding, pageTopPadding } from '../../styles/spacing';
+import { pageHorizontalPadding } from '../../styles/spacing';
 import { Colors } from '../../styles';
 import UserForm from '../../components/user/UserForm';
 import { useSelector } from 'react-redux';
-import { View } from 'react-native-animatable';
 import { authSelector, updateUser } from '../../state';
 
 const UserProfileScreen: FunctionComponent = () => {
@@ -31,12 +30,10 @@ const UserProfileScreen: FunctionComponent = () => {
 					style={styles.userPicContainer}
 					// onPress={takeImageHandler}
 				>
-					<View style={styles.imgBorder}>
-						<Image
-							style={styles.img}
-							source={require('../../../assets/pic.jpeg')}
-						/>
-					</View>
+					<Image
+						style={styles.img}
+						source={require('../../../assets/pic.jpeg')}
+					/>
 				</TouchableOpacity>
 				<UserForm
 					formButtonText="ACTUALIZAR"
@@ -63,23 +60,20 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.screenBackground,
 		paddingHorizontal: pageHorizontalPadding,
 	},
-	imgBorder: {
-		borderWidth: 1,
-		borderColor: Colors.main,
-		borderRadius: 75,
-	},
 	img: {
 		width: 130,
 		height: 130,
 		borderRadius: 75,
-		borderColor: Colors.screenBackground,
-		borderWidth: 3,
 	},
 	userPicContainer: {
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginVertical: 15,
 		padding: 10,
+		shadowOffset: { width: 0, height: 5 },
+		shadowOpacity: 0.3,
+		elevation: 8,
+		shadowRadius: 5,
 	},
 });
 

@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
 	},
 	headerNameText: {
 		...(baseBoldText as TextStyle),
-		fontSize: largestFontSize,
+		fontSize: largeFontSize,
 	},
 });

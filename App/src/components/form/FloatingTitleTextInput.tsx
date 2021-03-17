@@ -1,12 +1,6 @@
 import React, { FunctionComponent, useState, ReactNode } from 'react';
-import {
-	View,
-	Animated,
-	StyleSheet,
-	TextInput,
-	TouchableOpacity,
-} from 'react-native';
-import { FontAwesome, Feather } from '@expo/vector-icons';
+import { View, Animated, StyleSheet, TextInput, TextStyle } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 import { Colors } from '../../styles';
@@ -15,6 +9,7 @@ import {
 	baseFontSize,
 	smallestFontSize,
 	inputErrorText,
+	baseText,
 } from '../../styles/typography';
 
 interface IFloatingTitleTextInputProps {
@@ -133,7 +128,7 @@ const styles = StyleSheet.create({
 	inputContainer: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		borderBottomColor: Colors.lightGray,
+		borderBottomColor: Colors.mediumGray,
 		borderBottomWidth: 0.4,
 		marginBottom: 7,
 		height: 50,
@@ -153,6 +148,7 @@ const styles = StyleSheet.create({
 		padding: 5,
 	},
 	titleStyles: {
+		...(baseText as TextStyle),
 		color: Colors.mediumGray,
 		fontSize: baseFontSize,
 		position: 'absolute',

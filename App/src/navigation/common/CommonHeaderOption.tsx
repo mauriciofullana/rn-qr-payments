@@ -46,7 +46,7 @@ export const ScreenHeaderCommonOptions = ({
 					>
 						<Image
 							style={styles.img}
-							source={require('../../../assets/pic.jpeg')}
+							source={require('../../../assets/logo.png')}
 						/>
 					</TouchableOpacity>
 				);
@@ -82,11 +82,14 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	img: {
-		width: 38,
-		height: 38,
-		borderRadius: 19,
-		borderColor: Colors.mediumGray,
-		borderWidth: 1,
-		marginRight: 10,
+		height: 30,
+		aspectRatio: 585 / 149,
+
+		// width: 38,
+
+		// borderRadius: 19,
+		// borderColor: Colors.mediumGray,
+		// borderWidth: 1,
+		// marginRight: 10,
 	},
 });
