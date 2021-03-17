@@ -22,7 +22,7 @@ const AuthStackNavigator: FunctionComponent = () => {
 				headerStyle: {
 					backgroundColor: Colors.screenBackground,
 				},
-				headerTintColor: Colors.white,
+				headerTintColor: Colors.headerText,
 			}}
 		>
 			<AuthStack.Screen
@@ -104,7 +104,7 @@ const AuthStackNavigator: FunctionComponent = () => {
 
 const styles = StyleSheet.create({
 	hederMenuIcon: {
-		color: Colors.lightGray,
+		color: Colors.headerIcon,
 	},
 	headerIconContainer: {
 		marginHorizontal: 15,

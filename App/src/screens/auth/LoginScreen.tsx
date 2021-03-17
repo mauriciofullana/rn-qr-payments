@@ -7,33 +7,34 @@ import {
 	TouchableOpacity,
 	Image,
 	Switch,
+	TextStyle,
 } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Ionicons, Feather } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
-import { Colors, Buttons } from '../../styles';
+import { Colors } from '../../styles';
 import { LoginScreenNavigationProp } from '../../navigation/auth/types';
-import { transparent } from '../../styles/colors';
 import { pageHorizontalPadding } from '../../styles/spacing';
 import { FormButton, FormInput } from '../../components';
 import { login } from '../../state';
+import { baseText } from '../../styles/typography';
 
 interface LoginProps {
 	navigation: LoginScreenNavigationProp;
 }
 
 const LoginScreen: FunctionComponent<LoginProps> = ({ navigation }) => {
-	const [userName, setUsername] = useState('');
-	const [password, setPassword] = useState('');
+	const [userName, setUsername] = useState<string>('');
+	const [password, setPassword] = useState<string>('');
 	const [secureTextEntry, setSecureTextEntry] = useState<boolean>(true);
-	const [isEnabled, setIsEnabled] = useState(false);
-	const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+	const [isEnabled, setIsEnabled] = useState<boolean>(false);
 	const dispatch = useDispatch();
 
-	const disabledLogin = () => {
-		return !userName || !password;
-	};
+	const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+	// const disabledLogin = () => !userName || !password;
+	// const handleSecurityTextEntry = () => setSecureTextEntry((state) => !state);
+	//const handleLogin = () => dispatch(login({ userName, password }));
 
 	return (
 		<ScrollView
@@ -75,24 +76,21 @@ const LoginScreen: FunctionComponent<LoginProps> = ({ navigation }) => {
 					iconName="lock"
 					secureTextEntry={secureTextEntry}
 				>
-					<TouchableOpacity
-						onPress={() => setSecureTextEntry((state) => !state)}
-					>
+					<TouchableOpacity onPress={() => {}}>
 						<Ionicons
 							style={styles.inputIcon}
 							name={secureTextEntry ? 'md-eye' : 'md-eye-off'}
-							color={Colors.lightGray}
+							color={Colors.darkGray}
 							size={20}
 						/>
 					</TouchableOpacity>
 				</FormInput>
-
 				<View style={styles.switchContainer}>
 					<Switch
 						style={styles.switch}
 						trackColor={{ false: Colors.lightGray, true: Colors.main }}
 						thumbColor={Colors.lightGray}
-						ios_backgroundColor="#3e3e3e"
+						ios_backgroundColor={Colors.mediumGray}
 						onValueChange={toggleSwitch}
 						value={isEnabled}
 					/>
@@ -100,8 +98,8 @@ const LoginScreen: FunctionComponent<LoginProps> = ({ navigation }) => {
 				</View>
 
 				<FormButton
-					isDisabled={disabledLogin}
-					onPressCallback={() => dispatch(login({ userName, password }))}
+					isDisabled={() => false}
+					onPressCallback={() => {}}
 					text="INGRESAR"
 				/>
 
@@ -136,9 +134,9 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	img: {
-		width: '60%',
+		width: '55%',
 		height: undefined,
-		aspectRatio: 598 / 176,
+		aspectRatio: 585 / 149,
 	},
 	formContainer: {
 		flex: 1,
@@ -155,30 +153,13 @@ const styles = StyleSheet.create({
 		marginRight: 10,
 	},
 	switchText: {
-		color: Colors.lightGray,
-	},
-	signinButton: {
-		...Buttons.base,
-		backgroundColor: transparent,
-		borderColor: Colors.main,
-		borderWidth: 1,
-		marginBottom: 20,
-	},
-	signinButtonDisabled: {
-		borderColor: Colors.mediumGray,
-		borderWidth: 1,
-	},
-	signinButtonText: {
-		color: Colors.main,
-		padding: 10,
-	},
-	signinButtonTextDisabled: {
-		color: Colors.mediumGray,
-		padding: 10,
+		...(baseText as TextStyle),
+		color: Colors.baseText,
 	},
 	forgotPasswordText: {
 		padding: 10,
-		color: Colors.lightGray,
+		...(baseText as TextStyle),
+		color: Colors.baseText,
 	},
 	signupContainer: {
 		flex: 1,
@@ -188,10 +169,12 @@ const styles = StyleSheet.create({
 		paddingBottom: 35,
 	},
 	signupText: {
-		color: Colors.lightGray,
+		...(baseText as TextStyle),
+		color: Colors.baseText,
 		marginHorizontal: 5,
 	},
 	signupActionText: {
+		...(baseText as TextStyle),
 		color: Colors.main,
 	},
 });

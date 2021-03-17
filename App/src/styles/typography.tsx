@@ -1,3 +1,4 @@
+import { StyleProp, TextStyle } from 'react-native';
 import * as Colors from './colors';
 
 export const extraLargeFontSize = 40;
@@ -15,6 +16,16 @@ const base = {
 	display: 'flex',
 	flexDirection: 'row',
 	justifyContent: 'center',
+};
+
+export const baseText: StyleProp<TextStyle> = {
+	fontFamily: 'Roboto_400Regular',
+	fontSize: baseFontSize,
+};
+
+export const baseBoldText: StyleProp<TextStyle> = {
+	fontFamily: 'Roboto_700Bold',
+	fontSize: baseFontSize,
 };
 
 export const link = {
@@ -47,6 +58,7 @@ export const screenHeader = {
 };
 
 export const inputText = {
+	...baseText,
 	color: Colors.loginText,
 	fontSize: baseFontSize,
 };

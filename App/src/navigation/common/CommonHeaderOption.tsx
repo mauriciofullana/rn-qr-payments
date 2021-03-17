@@ -73,7 +73,7 @@ export const StackCommonOptions = (): StackNavigationOptions => {
 
 const styles = StyleSheet.create({
 	hederMenuIcon: {
-		color: Colors.darkGray,
+		color: Colors.headerIcon,
 	},
 	headerIconContainer: {
 		marginHorizontal: 15,

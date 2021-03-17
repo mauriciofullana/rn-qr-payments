@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, TextStyle, TouchableHighlight } from 'react-native';
 import { Buttons, Colors } from '../../styles';
 import { transparent } from '../../styles/colors';
+import { baseText } from '../../styles/typography';
 
 interface IFormButton {
 	isDisabled(): boolean;
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 	},
 	signinButtonText: {
+		...(baseText as TextStyle),
 		color: Colors.main,
 		padding: 10,
 	},

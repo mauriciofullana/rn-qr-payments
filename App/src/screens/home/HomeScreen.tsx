@@ -49,8 +49,9 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
-			<Welcome />
-
+			<View style={styles.welcomeContainer}>
+				<Welcome />
+			</View>
 			<View style={styles.actionsContainer}>
 				<TouchableOpacity
 					style={styles.section}
@@ -60,7 +61,7 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = ({ navigation }) => {
 						<MaterialCommunityIcons
 							style={styles.icon}
 							name="qrcode"
-							color={Colors.mainOpacity}
+							color={Colors.darkGray}
 							size={58}
 						/>
 						<Text style={styles.sectionText}>COBRAR</Text>
@@ -71,7 +72,7 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = ({ navigation }) => {
 						<MaterialCommunityIcons
 							style={styles.icon}
 							name="bank-transfer-out"
-							color={Colors.mainOpacity}
+							color={Colors.darkGray}
 							size={58}
 						/>
 						<Text style={styles.sectionText}>PAGAR</Text>
@@ -96,9 +97,13 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: Colors.screenBackground,
 	},
+	welcomeContainer: {
+		marginTop: 10,
+	},
 	actionsContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-evenly',
+		marginVertical: 35,
 	},
 	section: {
 		alignItems: 'center',
@@ -110,30 +115,29 @@ const styles = StyleSheet.create({
 		shadowColor: Colors.black,
 		shadowOffset: { width: 0, height: 5 },
 		shadowOpacity: 0.3,
-		elevation: 3,
-		shadowRadius: 8,
+		elevation: 8,
+		shadowRadius: 5,
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: 120,
-		width: 120,
+		height: 110,
+		width: 110,
 	},
 	icon: {
 		backgroundColor: 'transparent',
 		marginBottom: 10,
 	},
 	sectionText: {
-		color: Colors.main,
+		color: Colors.baseText,
 		fontSize: smallestFontSize,
 		fontWeight: 'bold',
 	},
 	recentTrasnsactionsContainer: {
 		flex: 1,
-		marginTop: 40,
 		shadowColor: Colors.black,
 		shadowOffset: { width: 0, height: 0 },
-		shadowOpacity: 0.25,
-		elevation: 3,
-		shadowRadius: 8,
+		shadowOpacity: 0.3,
+		elevation: 8,
+		shadowRadius: 5,
 	},
 });
 

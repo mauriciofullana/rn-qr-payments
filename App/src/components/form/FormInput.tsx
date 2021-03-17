@@ -28,7 +28,7 @@ const FormInput: FunctionComponent<IFormInputProps> = ({
 				<FontAwesome
 					style={styles.inputIcon}
 					name={iconName}
-					color={Colors.lightGray}
+					color={Colors.darkGray}
 					size={20}
 				/>
 			)}
@@ -37,7 +37,7 @@ const FormInput: FunctionComponent<IFormInputProps> = ({
 				value={value}
 				onChangeText={onChangeValue}
 				placeholder={placeHolderText}
-				placeholderTextColor={Colors.mediumGray}
+				placeholderTextColor={Colors.placeHolderText}
 				autoCapitalize="none"
 				secureTextEntry={secureTextEntry}
 			/>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 	inputContainer: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		borderBottomColor: Colors.lightGray,
+		borderBottomColor: Colors.mediumGray,
 		borderBottomWidth: 0.4,
 		marginBottom: 20,
 	},

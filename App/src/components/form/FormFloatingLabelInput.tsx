@@ -4,11 +4,7 @@ import * as Animatable from 'react-native-animatable';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 
 import { Colors } from '../../styles';
-import {
-	inputText,
-	baseFontSize,
-	inputErrorText,
-} from '../../styles/typography';
+import { inputErrorText } from '../../styles/typography';
 
 interface IFloatingTitleTextInputProps {
 	value?: string;
@@ -71,38 +67,6 @@ const FormFloatingLabelInput: FunctionComponent<IFloatingTitleTextInputProps> = 
 const styles = StyleSheet.create({
 	container: {
 		marginBottom: 10,
-	},
-	inputContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		borderBottomColor: Colors.lightGray,
-		borderBottomWidth: 0.4,
-		marginBottom: 7,
-		height: 50,
-	},
-	inputContainerError: {
-		borderBottomColor: Colors.lightRed,
-	},
-	inputBox: {
-		...inputText,
-		flex: 1,
-		paddingTop: 10,
-		paddingRight: 10,
-		paddingBottom: 5,
-		paddingLeft: 10,
-	},
-	inputIcon: {
-		padding: 5,
-	},
-	titleStyles: {
-		color: Colors.mediumGray,
-		fontSize: baseFontSize,
-		position: 'absolute',
-		left: 10,
-	},
-	clearIcon: {
-		color: Colors.mediumGray,
-		padding: 5,
 	},
 	errorMessageText: {
 		...inputErrorText,
