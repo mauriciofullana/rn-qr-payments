@@ -32,9 +32,9 @@ const LoginScreen: FunctionComponent<LoginProps> = ({ navigation }) => {
 	const dispatch = useDispatch();
 
 	const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
-	// const disabledLogin = () => !userName || !password;
-	// const handleSecurityTextEntry = () => setSecureTextEntry((state) => !state);
-	//const handleLogin = () => dispatch(login({ userName, password }));
+	const disabledLogin = () => !userName || !password;
+	const handleSecurityTextEntry = () => setSecureTextEntry((state) => !state);
+	const handleLogin = () => dispatch(login({ userName, password }));
 
 	return (
 		<ScrollView
@@ -76,7 +76,7 @@ const LoginScreen: FunctionComponent<LoginProps> = ({ navigation }) => {
 					iconName="lock"
 					secureTextEntry={secureTextEntry}
 				>
-					<TouchableOpacity onPress={() => {}}>
+					<TouchableOpacity onPress={handleSecurityTextEntry}>
 						<Ionicons
 							style={styles.inputIcon}
 							name={secureTextEntry ? 'md-eye' : 'md-eye-off'}
@@ -98,8 +98,8 @@ const LoginScreen: FunctionComponent<LoginProps> = ({ navigation }) => {
 				</View>
 
 				<FormButton
-					isDisabled={() => false}
-					onPressCallback={() => {}}
+					isDisabled={disabledLogin}
+					onPressCallback={handleLogin}
 					text="INGRESAR"
 				/>
 
